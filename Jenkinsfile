@@ -8,17 +8,25 @@ pipeline {
             }
         }
 
-        stage('Downloading') {
+        stage('Download') {
             steps {
                 echo 'Downloading...'
                 sh 'go mod download'
             }
         }
+        
 
-        stage('Running') {
+        stage('Build') {
             steps {
-                echo 'Running...'
-                sh 'go run main.go'
+                echo 'Building...'
+                sh 'go build -o main .'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh './main'
             }
         }
         // stage('Pull Repositories') {
