@@ -1,4 +1,4 @@
-module github.com/muhammadaskar/learn-jenkins-using-golang
+module learn-jenkins-using-golang
 
 go 1.20
 
