@@ -1,6 +1,6 @@
 module github.com/muhammadaskar/learn-jenkins-using-golang
 
-go 1.20
+go 1.16
 
 require (
 	github.com/bytedance/sonic v1.9.2 // indirect
