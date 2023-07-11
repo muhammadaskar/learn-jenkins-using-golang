@@ -4,7 +4,20 @@ pipeline {
     stages {
         stage('Pull Repositories') {
             steps {
-                echo 'run...'
+                echo 'Pull Repositories'
+            }
+        }
+
+        stage('Downloading') {
+            steps {
+                echo 'Downloading...'
+                sh 'go mod download'
+            }
+        }
+
+        stage('Running') {
+            steps {
+                echo 'Running...'
                 sh 'go run main.go'
             }
         }
