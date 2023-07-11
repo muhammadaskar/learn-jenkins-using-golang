@@ -23,9 +23,9 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Run') {
             steps {
-                echo 'Building...'
+                echo 'Running...'
                 sh './main'
             }
         }
