@@ -14,7 +14,7 @@ type Configuration struct {
 		Name     string `default:"db_test_golang"`
 		User     string `default:"root"`
 		Password string `default:"admin"`
-		Host     string `default:"localhost"`
+		Host     string `default:"mysql-container"`
 		Port     string `default:"3306"`
 	}
 }
