@@ -18,7 +18,7 @@ func GetUser(c *gin.Context) {
 	var user User
 	userID := c.Param("id")
 
-	if err := DB.First(&user, userID).Error; err != nil {
+	if err := DB.Where("id = ?", userID).Find(&user).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"status": "error", "message": "User not found"})
 		return
 	}
@@ -30,7 +30,7 @@ func UpdateUser(c *gin.Context) {
 	var user User
 	userID := c.Param("id")
 
-	if err := DB.First(&user, userID).Error; err != nil {
+	if err := DB.Where("id = ?", userID).Find(&user).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"status": "error", "message": "User not found"})
 		return
 	}
@@ -44,7 +44,7 @@ func DeleteUser(c *gin.Context) {
 	var user User
 	userID := c.Param("id")
 
-	if err := DB.First(&user, userID).Error; err != nil {
+	if err := DB.Where("id = ?", userID).Find(&user).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"status": "error", "message": "User not found"})
 		return
 	}
