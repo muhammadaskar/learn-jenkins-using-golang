@@ -39,7 +39,7 @@ func InitDatabase() {
 	// 	config.DB.Name,
 	// )
 
-	DB, err = gorm.Open("mysql", "root:admin@tcp(mysql-container:3306)/db_test_golang")
+	DB, err = gorm.Open("mysql", "root:admin@tcp(172.17.0.3:3306)/db_test_golang")
 
 	if err != nil {
 		fmt.Println("Database connection failed:", err)
