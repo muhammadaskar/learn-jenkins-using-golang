@@ -12,6 +12,7 @@ func main() {
 
 	r := gin.Default()
 
+	r.GET("/", Index)
 	r.POST("/users", CreateUser)
 	r.GET("/users/:id", GetUser)
 	r.PUT("/users/:id", UpdateUser)
