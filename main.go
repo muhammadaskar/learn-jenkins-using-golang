@@ -14,6 +14,7 @@ func main() {
 
 	r.GET("/", Index)
 	r.POST("/users", CreateUser)
+	r.GET("/users", GetUsers)
 	r.GET("/users/:id", GetUser)
 	r.PUT("/users/:id", UpdateUser)
 	r.DELETE("/users/:id", DeleteUser)

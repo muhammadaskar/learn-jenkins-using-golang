@@ -10,6 +10,13 @@ func Index(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"status": "success", "message": "Hello World"})
 }
 
+func GetUsers(c *gin.Context) {
+	var user User
+	data := DB.Find(&user)
+
+	c.JSON(http.StatusOK, gin.H{"status": "success", "data": data})
+}
+
 func CreateUser(c *gin.Context) {
 	var user User
 	c.BindJSON(&user)
